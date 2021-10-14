@@ -1,24 +1,21 @@
-# README
+# アプリケーション名
+cosme diary (コスメダイアリー)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 概要
+手持ちのコスメを記録管理できます。
+コスメのジャンルや用途以外に、購入金額・購入日・開封日なども記録できます。
 
-Things you may want to cover:
+# URL
+追って記載
+# テスト用アカウント
+追って記載
+# 利用方法
+追って記載
 
-* Ruby version
+# 目指した課題解決
+「あれ持ってたっけ？」「これはいつ買ったんだ？」「プチプラもいいけどデパコスが欲しい！」「コスメ代を日割り換算すると？」etc、いくらあってもまた欲しくなるコスメ欲を上手に記録管理してくれるアプリです。
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 洗い出した要件
+追って記載
+# データベース設計
+追ってER図を記載
