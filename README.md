@@ -1,3 +1,32 @@
+# テーブル設計
+
+## users テーブル
+| Column             | Type    | Options                   |
+| ------------------ | ------- | ------------------------- |
+| name               | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| password           | string  | null: false               |
+| encrypted_password | string  | null: false               |
+| birth              | date    | null: false               |
+
+### Association
+- has_many :items
+
+## items テーブル
+| Column                | Type       | Options                        |
+| --------------------- | ---------- | ------------------------------ |
+| name                  | string     | null: false                    |
+| category_id           | integer    | null: false                    |
+| range_id              | integer    | null: false                    |
+| price                 | integer    | null: false                    |
+| purchase_date         | date       | null: false                    |
+| opening_date          | date       | null: false                    |
+| user                  | references | null: false, foreign_key: true |
+| image                 |            | Active Storage                 |
+
+### Association
+- belongs_to :user
+
 # アプリケーション名
 cosme diary (コスメダイアリー)
 
