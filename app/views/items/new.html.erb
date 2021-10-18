@@ -1,0 +1,59 @@
+<h3>コスメダイアリーを投稿する</h3>
+
+  <%= form_with model: @item, local: true do |form| %>
+
+    <div class="field">
+      <%= form.label :image, "商品画像" %><br />
+      <%= form.file_field :image, placeholder: "画像をアップロード" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :name, "商品名" %><br />
+      <%= form.text_field :name, placeholder: "商品名" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :category_id, "カテゴリー" %><br />
+      <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :genre_id, "価格帯" %><br />
+      <%= form.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %><br />
+    </div>
+
+    <div class="field">
+      <%= form.label :price, "購入価格" %><br />
+      <%= form.text_field :price, placeholder: "例）300" %><br />
+    </div>
+
+    <div class="field">
+      <%= form.label :purchase_date, "購入日" %><br />
+      <%= raw sprintf(
+                    form.date_select(
+                      :purchase_date,
+                      use_month_numbers: true,
+                      prompt:'--',
+                      start_year: Time.now.year-3,
+                      end_year: Time.now.year,
+                      date_separator: '%s'),
+                    "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :opening_date, "開封日" %><br />
+      <%= raw sprintf(
+                    form.date_select(
+                      :opening_date,
+                      use_month_numbers: true,
+                      prompt:'--',
+                      start_year: Time.now.year-3,
+                      end_year: Time.now.year,
+                      date_separator: '%s'),
+                    "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "投稿" %>
+    </div>
+  <% end %>
