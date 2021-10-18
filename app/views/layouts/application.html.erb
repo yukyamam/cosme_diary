@@ -10,6 +10,23 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to "CosmeDiary", root_path %>
+      <%# ログイン中に表示 %>
+      <% if user_signed_in? %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <%# <%= link_to "新規投稿", new_item_path, class: "post" %>
+      <%# ログイン中に表示 %>
+      <% else %>
+      <%# ログアウト後に表示 %>
+        <%= link_to "ログイン", new_user_session_path, class: "post" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+      <% end %>
+      <%# ログアウト後に表示 %>
+    </header>
     <%= yield %>
+    <footer>
+      <p>Copyright CosmeDiary 2021.</p>
+    </footer>
   </body>
 </html>

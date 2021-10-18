@@ -1,3 +1,10 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
-<p>ここがトップページ（ルートパス）です</p>
+<br>
+<p>〜〜〜〜〜〜〜〜yeild〜〜</p>
+  <%# ログインしているときは以下を表示する %>
+  <% if user_signed_in? %>
+    <%= "こんにちは#{current_user.name}さん" %>
+      <%# <%= link_to "#{current_user.name}さん", user_path(current_user.id) %>
+  <% end %>
+    <%# // ログインしているときは上記を表示する %>
+<p>〜〜〜〜〜〜〜〜yeild〜〜</p>
+<br>
