@@ -1,10 +1,10 @@
-<br>
-<p>〜〜〜〜〜〜〜〜yeild〜〜</p>
-  <%# ログインしているときは以下を表示する %>
-  <% if user_signed_in? %>
-    <%= "こんにちは#{current_user.name}さん" %>
-      <%# <%= link_to "#{current_user.name}さん", user_path(current_user.id) %>
-  <% end %>
-    <%# // ログインしているときは上記を表示する %>
-<p>〜〜〜〜〜〜〜〜yeild〜〜</p>
-<br>
+<%# ログインしているときは以下を表示する %>
+<%# <% if user_signed_in? %>
+  <%# <%= "こんにちは#{current_user.name}さん" %>
+  <%# <%= link_to "#{current_user.name}さん", user_path(current_user.id) %>
+<%# <% end %>
+<%# // ログインしているときは上記を表示する %>
+
+<%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+<%= render partial: "item", collection: @items %>
+<%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
