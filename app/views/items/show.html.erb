@@ -1,12 +1,12 @@
-<%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+<%# アイテムの投稿者とログインしているユーザーが同じであれば以下を表示する %>
   <% if user_signed_in? && current_user.id == @item.user_id %>
     <%= link_to "編集する", edit_item_path(@item.id) %>
     <%= link_to "削除する", item_path(@item.id), method: :delete %>
   <% end %>
-<%# プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+<%# アイテムの投稿者とログインしているユーザーが同じであれば上記を表示する %>
 
 <p><%= @item.name %></p>
-<%# <%= link_to "by #{@prototype.user.name}", user_path(@prototype.user_id) %>
+<%= link_to "by #{@item.user.name}", user_path(@item.user_id) %>
 <p><%= image_tag @item.image.variant(resize: '500x500') %></p>
 <p><%= @item.category.name %></p>
 <p><%= @item.genre.name %></p>
