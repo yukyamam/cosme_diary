@@ -10,28 +10,40 @@
   </head>
 
   <body>
-    <header>
-      <%= link_to "CosmeDiary", root_path %>
+    <header class="header">
+    <div class="inner">
+    <div class="nav">
+      <div class="nav__left">
+      <%= link_to "CosmeDiary", root_path, class: "logo" %>
+      </div>
       <%# ログイン中に表示 %>
       <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        <%= link_to "New Post", new_item_path, class: "post" %>
-        <div>
+      <div class="nav__right">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav__btn" %>
+        <%= link_to "New Post", new_item_path, class: "nav__btn" %>
+        <div class="welcome">
           <%= "これは" %>
-          <%= link_to "#{current_user.name}さん", user_path(current_user.id) %>
+          <%= link_to "#{current_user.name}さん", user_path(current_user.id), class: "welcome__btn" %>
           <%= "のCosmeDiaryです" %>
         </div>
+      </div>
       <%# ログイン中に表示 %>
       <% else %>
       <%# ログアウト後に表示 %>
-        <%= link_to "ログイン", new_user_session_path, class: "post" %>
-        <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+      <div class="nav__right">
+        <%= link_to "ログイン", new_user_session_path, class: "nav__btn" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "nav__btn" %>
+      </div>
       <% end %>
       <%# ログアウト後に表示 %>
+    </div>
+    </div>
     </header>
+
     <%= yield %>
-    <footer>
-      <p>Copyright CosmeDiary 2021.</p>
+
+    <footer class="footer">
+      <p class="copyright">Copyright CosmeDiary 2021 by yukyamam.</p>
     </footer>
   </body>
 </html>
