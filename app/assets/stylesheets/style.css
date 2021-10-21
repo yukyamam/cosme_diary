@@ -91,6 +91,20 @@ a {
   color: #FE4261;
   /* background: #FE4261; */
 }
+.return__btn{
+  padding: 8px 20px;
+  font-size: 14px;
+  border: 2px solid #750013;
+  color: #750013;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 3px;
+  display: inline-block;
+}
+.return__btn:hover{
+  border-color: #FF8EA1;
+  color: #FF8EA1;
+}
 
 /* フォーム周り */
 .form__wrapper{
