@@ -1,15 +1,24 @@
-<%# アイテムの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-  <% if user_signed_in? && current_user.id == @item.user_id %>
-    <%= link_to "編集する", edit_item_path(@item.id) %>
-    <%= link_to "削除する", item_path(@item.id), method: :delete %>
-  <% end %>
-<%# アイテムの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+    <h2 class="page-heading">コスメの詳細</h2>
+    <%# アイテムの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <% if user_signed_in? && current_user.id == @item.user_id %>
+        <%= link_to "編集する", edit_item_path(@item.id), class: :form__btn %>
+        <%= link_to "削除する", item_path(@item.id), method: :delete, class: :form__btn %>
+      <% end %>
+    <%# アイテムの投稿者とログインしているユーザーが同じであれば上記を表示する %>
 
-<p><%= @item.name %></p>
-<%= link_to "by #{@item.user.name}", user_path(@item.user_id) %>
-<p><%= image_tag @item.image.variant(resize: '500x500') %></p>
-<p><%= @item.category.name %></p>
-<p><%= @item.genre.name %></p>
-<p><%= @item.price %></p>
-<p><%= @item.purchase_date %></p>
-<p><%= @item.opening_date %></p>
+    <%# アイテムの詳細 %>
+    <p><%= @item.name %></p>
+    <%= link_to "by #{@item.user.name}", user_path(@item.user_id) %>
+    <p><%= image_tag @item.image.variant(resize: '500x500') %></p>
+    <p><%= @item.category.name %></p>
+    <p><%= @item.genre.name %></p>
+    <p><%= @item.price %></p>
+    <p><%= @item.purchase_date %></p>
+    <p><%= @item.opening_date %></p>
+    <%# アイテムの詳細 %>
+    </div>
+  </div>
+</div>

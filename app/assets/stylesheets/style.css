@@ -74,13 +74,14 @@ a {
   background: #FE4261;
 }
 .welcome{
-  color: #fff;
+  color: #750013;
+  margin-bottom: 20px;
 }
 .welcome__btn{
   display: inline-block;
   /* padding: 0.4em 1.6em; */
   /* font-size: 0.8em; */
-  color: #fff;
+  color: #750013;
   /* text-decoration: none; */
   /* user-select: none; */
   /* border: 1px #fff solid; */

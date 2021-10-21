@@ -1,5 +1,10 @@
-<%= "#{@user.name}さんのマイページ"%>
-
-<%# 投稿機能実装後、部分テンプレートで投稿一覧を表示する %>
-<%= render partial: "/items/item", collection: @items %>
-<%# 投稿機能実装後、部分テンプレートで投稿一覧を表示する %>
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading"><%= "#{@user.name}さんのマイページ" %></h2>
+        <%# 部分テンプレートで投稿を表示する %>
+          <%= render partial: "/items/item", collection: @items %>
+        <%# 部分テンプレートで投稿を表示する %>
+    </div>
+  </div>
+</div>
