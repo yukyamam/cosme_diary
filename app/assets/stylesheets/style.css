@@ -93,7 +93,53 @@ a {
 }
 
 /* フォーム周り */
+.form__wrapper{
+  min-height: calc(100vh - 161px);
+}
+.field{
+  margin: 10px 0;
+}
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+.input-date{
+  display: flex;
+  flex-wrap: wrap;
+}
+.actions{
+  margin: 20px 0;
+}
+.form__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: #750013;
+  border: 1px #750013 solid;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+}
+.form__btn:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
 /* メイン */
+.page-heading {
+  color: #750013;
+  font-size: 30px;
+  margin-bottom: 28px;
+}
+
 /* 詳細ページ */
 /* ユーザーページ */
 
@@ -101,6 +147,7 @@ a {
 .footer {
   background-color: #FF8EA1;
   padding: 10px 0;
+  margin-top: 20px;
 }
 .copyright {
   text-align: center;
