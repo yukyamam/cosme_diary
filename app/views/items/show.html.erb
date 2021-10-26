@@ -1,24 +1,47 @@
 <div class="main">
   <div class="inner">
-    <div class="form__wrapper">
+    <div class="cosme__wrapper">
+
     <h2 class="page-heading">コスメの詳細</h2>
+
+    <%# アイテムの詳細 %>
+    <p class="cosme__hedding"><%= @item.name %></p>
+    <p class="cosme__user"><%= link_to "by #{@item.user.name}", user_path(@item.user_id) %></p>
+    <%# アイテムの詳細 %>
+
     <%# アイテムの投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <% if user_signed_in? && current_user.id == @item.user_id %>
-        <%= link_to "編集する", edit_item_path(@item.id), class: :form__btn %>
-        <%= link_to "削除する", item_path(@item.id), method: :delete, class: :form__btn %>
+      <div class="cosme__manage">
+        <%= link_to "編集する", edit_item_path(@item.id), class: :cosme__btn %>
+        <%= link_to "削除する", item_path(@item.id), method: :delete, class: :cosme__btn %>
+      </div>
       <% end %>
     <%# アイテムの投稿者とログインしているユーザーが同じであれば上記を表示する %>
 
     <%# アイテムの詳細 %>
-    <p><%= @item.name %></p>
-    <%= link_to "by #{@item.user.name}", user_path(@item.user_id) %>
-    <p><%= image_tag @item.image.variant(resize: '500x500') %></p>
-    <p><%= @item.category.name %></p>
-    <p><%= @item.genre.name %></p>
-    <p><%= @item.price %></p>
-    <p><%= @item.purchase_date %></p>
-    <p><%= @item.opening_date %></p>
+    <p class="cosme__image"><%= image_tag @item.image.variant(resize: '500x500') %></p>
+    <div class="cosme__detail">
+      <p class="detail__title">カテゴリー</p>
+      <p class="detail__content"><%= @item.category.name %></p>
+    </div>
+    <div class="cosme__detail">
+      <p class="detail__title">ジャンル</p>
+      <p class="detail__content"><%= @item.genre.name %></p>
+    </div>
+    <div class="cosme__detail">
+      <p class="detail__title">購入価格</p>
+      <p class="detail__content"><%= @item.price %></p>
+    </div>
+    <div class="cosme__detail">
+      <p class="detail__title">購入日</p>
+      <p class="detail__content"><%= @item.purchase_date %></p>
+    </div>
+    <div class="cosme__detail">
+      <p class="detail__title">開封日</p>
+      <p class="detail__content"><%= @item.opening_date %></p>
+    </div>
     <%# アイテムの詳細 %>
+
     </div>
   </div>
 </div>
