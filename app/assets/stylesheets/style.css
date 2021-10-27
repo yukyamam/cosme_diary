@@ -199,6 +199,7 @@ a {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  color: #750013;
 }
 .cosme__user{
   display: block;
@@ -244,6 +245,9 @@ a {
 }
 .detail__content{
   font-size: 15px;
+}
+.term{
+  color: #FE4261;
 }
 
 /* マイページ */

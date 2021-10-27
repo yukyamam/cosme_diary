@@ -30,16 +30,30 @@
     </div>
     <div class="cosme__detail">
       <p class="detail__title">購入価格</p>
-      <p class="detail__content"><%= @item.price %></p>
+      <p class="detail__content">¥ <%= @item.price %> -</p>
     </div>
     <div class="cosme__detail">
       <p class="detail__title">購入日</p>
       <p class="detail__content"><%= @item.purchase_date %></p>
+      <% if @item.purchase_date %>
+        <% term1 = (@today - @item.purchase_date).to_i %>
+        <p class="detail__content">購入から<span class="term"><%= term1 %>日</span>が経過しました</p>
+      <% end %>
     </div>
     <div class="cosme__detail">
       <p class="detail__title">開封日</p>
       <p class="detail__content"><%= @item.opening_date %></p>
+      <% if @item.opening_date %>
+        <% term2 = (@today - @item.opening_date).to_i %>
+        <p class="detail__content">開封から<span class="term"><%= term2 %>日</span>が経過しました</p>
+      <% end %>
     </div>
+    <% if @item.opening_date %>
+      <div class="cosme__detail">
+        <p class="detail__title">日割使用料</p>
+        <p class="detail__content">約 ¥ <%= @item.price / term2 %> -</p>
+      </div>
+    <% end %>
     <%# アイテムの詳細 %>
 
     </div>
