@@ -1,10 +1,24 @@
-<%# ログインしているときは以下を表示する %>
-<%# <% if user_signed_in? %>
-  <%# <%= "こんにちは#{current_user.name}さん" %>
-  <%# <%= link_to "#{current_user.name}さん", user_path(current_user.id) %>
-<%# <% end %>
-<%# // ログインしているときは上記を表示する %>
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
 
-<%# 投稿機能実装後、部分テンプレートで投稿一覧を表示する %>
-  <%= render partial: "item", collection: @items %>
-<%# 投稿機能実装後、部分テンプレートで投稿一覧を表示する %>
+      <%# ログイン中はユーザー名を表示 %>
+      <% if user_signed_in? %>
+      <div class="welcome">
+        <%= "これは" %>
+        <%= link_to "#{current_user.name}さん", user_path(current_user.id), class: "welcome__btn" %>
+        <%= "のCosmeDiaryです" %>
+      </div>
+      <% end %>
+      <%# ログイン中はユーザー名を表示 %>
+
+      <h2 class="page-heading">新着投稿一覧</h2>
+
+      <%# 部分テンプレートで投稿を表示する %>
+      <div class="card__wrapper">
+        <%= render partial: "item", collection: @items %>
+      </div>
+      <%# 部分テンプレートで投稿を表示する %>
+    </div>
+  </div>
+</div>

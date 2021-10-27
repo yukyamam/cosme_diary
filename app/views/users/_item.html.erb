@@ -5,10 +5,7 @@
   <div class="card__name">
     <%= item.name %>
   </div>
-  <div class="card__user">
-    <%= link_to "by #{item.user.name}", user_path(item.user_id) %>
+  <div class="card__price">
+    <%= "¥ #{item.price} -" %>
   </div>
 </div>
-
-<%# <p><%= item.category.name %>
-<%# <p><%= item.genre.name %>

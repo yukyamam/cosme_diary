@@ -1,5 +1,32 @@
-<%= "#{@user.name}さんのマイページ"%>
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading"><%= "#{@user.name}さんのマイページ" %></h2>
 
-<%# 投稿機能実装後、部分テンプレートで投稿一覧を表示する %>
-<%= render partial: "/items/item", collection: @items %>
-<%# 投稿機能実装後、部分テンプレートで投稿一覧を表示する %>
+      <div class="my-page">
+        <script>
+          var today = new Date();
+          var year = today.getFullYear();
+          var month = today.getMonth()+1;
+          var date = today.getDate();
+          // var week = today.getDay();
+          // var week_ja = new Array("日","月","火","水","木","金","土");
+          document.write(year+"/"+month+"/"+date+" 現在");
+        </script>
+        <div class="total-price">
+          <% total = 0 %>
+          <% @items.each do |item| %>
+            <% total += item.price %>
+          <% end %>
+          <p><%= "#{@user.name}さんのコスメ総額：¥ #{total} -" %></p>
+        </div>
+      </div>
+
+      <%# 部分テンプレートで投稿を表示する %>
+      <div class="card__wrapper">
+        <%= render partial: "item", collection: @items %>
+      </div>
+      <%# 部分テンプレートで投稿を表示する %>
+    </div>
+  </div>
+</div>
