@@ -30,6 +30,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @today = Date.today
   end
 
   def destroy
