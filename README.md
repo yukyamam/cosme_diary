@@ -35,7 +35,7 @@ cosme diary (コスメダイアリー)
 コスメのジャンルや用途以外に、購入金額・購入日・開封日なども記録できます。
 
 # URL
-https://cosme-diary.herokuapp.com/
+Basic認証実装後に表示
 
 # 利用方法
 - 会員登録後、「New Post」からコスメの情報を投稿します。
